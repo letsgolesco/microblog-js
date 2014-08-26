@@ -5,8 +5,16 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+/* MongoDB initialization */
+var mongoose = require('mongoose');
+var seeder = require('./seeder');
+var models = require('./models/index');  // TODO: Do we really need this in here??
+var db = mongoose.connect('mongodb://localhost/test');
+db.connection.on('open', function() {
+  seeder.check();
+});
+
 var routes = require('./routes/index');
-var users = require('./routes/users');
 
 var app = express();
 
