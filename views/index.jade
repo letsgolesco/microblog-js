@@ -1,5 +1,21 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  h1 TTC Microblog!
+
+  div#initialContent(style="display:none")
+    = Microblogs
+
+  div.app
+
+  script(id="blogListItemTemplate", type="text/x-handlebars")
+    <a href="#" class="blog-link">{{name}}</a>
+
+  script(id="blogDetailTemplate", type="text/x-handlebars")
+    <h1 class ="title">{{name}}</h1>
+
+  script(id="entryListItemTemplate", type="text/x-handlebars")
+    <img src={{image}} alt="image">
+    <span>{{text}}</span>
+    <button type="button">Delete</button>
+
