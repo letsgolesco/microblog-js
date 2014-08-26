@@ -1,13 +1,15 @@
+"use strict";
+
 define([
-  'backbone',
-  'models/microblogModel'
-], function(Backbone, Microblog) {
+    'backbone',
+    'models/microblogModel'
+], function (Backbone, Microblog) {
 
-  var MicroblogCollection = Backbone.Collection.extend({
-    model: Microblog,
-    url: '/blogs'
-  });
+    var MicroblogCollection = Backbone.Collection.extend({
+        model: Microblog,
+        url: '/blogs'
+    });
 
-  return MicroblogCollection;
+    return MicroblogCollection;
 
 });

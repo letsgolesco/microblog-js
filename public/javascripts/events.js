@@ -1,8 +1,10 @@
+'use strict';
+
 define([
-  'underscore',
-  'backbone'
-], function(_, Backbone) {
-  var o = {};
-  _.extend(o, Backbone.Events);
-  return o;
+    'underscore',
+    'backbone'
+], function (_, Backbone) {
+    var o = {};
+    _.extend(o, Backbone.Events);
+    return o;
 });

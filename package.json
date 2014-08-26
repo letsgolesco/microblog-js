@@ -1,20 +1,42 @@
 {
-  "name": "generated",
-  "version": "0.0.1",
-  "private": true,
-  "scripts": {
-    "start": "node ./bin/www"
-  },
-  "dependencies": {
-    "express": "~4.2.0",
-    "static-favicon": "~1.0.0",
-    "morgan": "~1.0.0",
-    "cookie-parser": "~1.0.1",
-    "body-parser": "~1.0.0",
-    "debug": "~0.7.4",
-    "jade": "~1.3.0",
-    "mongodb": "*",
-    "mongoose": "*"
-  }
+    "name": "generated",
+    "version": "0.0.1",
+    "private": true,
+    "scripts": {
+        "start": "node ./bin/www"
+    },
+    "dependencies": {
+        "express": "~4.2.0",
+        "static-favicon": "~1.0.0",
+        "morgan": "~1.0.0",
+        "cookie-parser": "~1.0.1",
+        "body-parser": "~1.0.0",
+        "debug": "~0.7.4",
+        "jade": "~1.3.0",
+        "mongodb": "*",
+        "mongoose": "*"
+    },
+    "jshintConfig": {
+        "nonew": true,
+        "curly": true,
+        "noarg": true,
+        "trailing": true,
+        "forin": true,
+        "noempty": true,
+        "node": true,
+        "eqeqeq": true,
+        "strict": true,
+        "undef": true,
+        "bitwise": true,
+        "newcap": true,
+        "immed": true,
+        "browser": true,
+        "nonbsp": true,
+        "freeze": true,
+        "es5": true,
+        "expr": true,
+        "nonew": false,
+        "predef": ["HOST", "DEV", "Thorax", "Handlebars", "Application", "Backbone", "appGlobals", "jQuery", "_", "$", "google", "console", "moment", "require", "console", "describe", "it", "before", "beforeEach", "after", "afterEach"]
+    }
 }
 

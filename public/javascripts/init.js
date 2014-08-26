@@ -1,7 +1,9 @@
+'use strict';
+
 define([
-  'app'
-], function(App) {
-  $(function() {
-    App.start();
-  });
+    'app'
+], function (App) {
+    $(function () {
+        App.start();
+    });
 });
