@@ -26,15 +26,15 @@ module.exports = {
         var firstEntry = new models.Entry({
           text: "First blog, first entry",
           image: "https://octodex.github.com/images/spidertocat.png",
-          microblog_id: newBlog
+          microblog: newBlog
         });
         firstEntry.save();
 
         // TODO: probably dumb to make 2 vars for 4 dummy entries
         var secondEntry = new models.Entry({
           text: "First blog, second entry",
-          image: "https://octodex.github.com/images/stormtroopcat.png",
-          microblog_id: newBlog
+          image: "https://octodex.github.com/images/stormtroopocat.png",
+          microblog: newBlog
         });
         secondEntry.save();
 
@@ -46,15 +46,15 @@ module.exports = {
 
         firstEntry = new models.Entry({
           text: "Second blog, first entry",
-          image: "https://octodex.github.com/images/stormtroopcat.png",
-          microblog_id: newBlog
+          image: "https://octodex.github.com/images/stormtroopocat.png",
+          microblog: newBlog
         });
         firstEntry.save();
 
         secondEntry = new models.Entry({
           text: "Second blog, second entry",
           image: "https://octodex.github.com/images/spidertocat.png",
-          microblog_id: newBlog
+          microblog: newBlog
         });
         secondEntry.save();
 
