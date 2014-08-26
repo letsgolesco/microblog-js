@@ -17,3 +17,6 @@ npm-debug.log
 build/Release
 
 .lock-wscript
+
+.DS_Store
+db
