@@ -10,8 +10,7 @@ var bodyParser = require('body-parser');
 /* MongoDB initialization */
 var mongoose = require('mongoose');
 var seeder = require('./seeder');
-var models = require('./models/index');  // TODO: Do we really need this in here??
-var db = mongoose.connect('mongodb://localhost/test');
+var db = mongoose.connect('mongodb://localhost/onboarding');
 db.connection.on('open', function () {
     seeder.check();
 });
