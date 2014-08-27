@@ -3,14 +3,13 @@
 define([
     'backbone',
     'jquery',
-    'handlebars',
-    'events'
-], function (Backbone, $, Handlebars, Events) {
+    'handlebars'
+], function (Backbone, $, Handlebars) {
 
     var EntryListItemView = Backbone.View.extend({
 
         events: {
-            'click .delete': 'deleteEntry'
+            'click .delete-entry': 'deleteEntry'
         },
 
         tagName: 'li',
