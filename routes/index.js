@@ -27,6 +27,17 @@ router.get('/blogs', function (req, res) {
     });
 });
 
+/* GET single microblog */
+router.get('/blogs/:id', function (req, res) {
+    db.Microblog.findById(req.params.id, function (err, blog) {
+        if (err) {
+            console.log(err);
+            return;
+        }
+        res.json(blog);
+    });
+});
+
 /* Get all entries for a specific microblog */
 router.get('/blogs/:id/entries', function (req, res) {
     db.Entry.find({ microblog: req.params.id }, function (err, entries) {
@@ -49,15 +60,34 @@ router.get('/entries', function (req, res) {
     });
 });
 
-/* GET single microblog */
-router.get('/blogs/:id', function (req, res) {
-    db.Microblog.findOne({ _id: req.params.id }, function (err, blog) {
+/* POST new entry to blog */
+router.post('/blogs/:id/entries', function(req, res) {
+    var entry = new db.Entry({
+        text: req.body.text,
+        image: req.body.image,
+        microblog: db.Microblog.findById(req.params.id)
+    });
+    entry.save(function (err) {
         if (err) {
             console.log(err);
             return;
         }
-        res.json(blog);
+        console.log("Created new entry" + entry.text);
     });
+    res.json(entry);
+});
+
+/* DELETE entry from blog */
+router.delete('/blogs/:blogId/entries/:id', function(req, res) {
+    var entry = db.Entry.findById(req.params.id);
+    entry.remove(function(err) {
+        if (err) {
+            console.log(err);
+            return;
+        }
+        console.log("Deleted dat entry");
+    });
+    res.json('');
 });
 
 module.exports = router;
