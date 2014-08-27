@@ -65,16 +65,16 @@ router.post('/blogs/:id/entries', function(req, res) {
     var entry = new db.Entry({
         text: req.body.text,
         image: req.body.image,
-        microblog: db.Microblog.findById(req.params.id)
+        microblog: req.params.id
     });
+    console.log(entry);
     entry.save(function (err) {
         if (err) {
             console.log(err);
             return;
         }
-        console.log("Created new entry" + entry.text);
     });
-    res.json(entry);
+    res.json('');
 });
 
 /* DELETE entry from blog */
@@ -85,7 +85,6 @@ router.delete('/blogs/:blogId/entries/:id', function(req, res) {
             console.log(err);
             return;
         }
-        console.log("Deleted dat entry");
     });
     res.json('');
 });
