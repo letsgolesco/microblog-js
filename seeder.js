@@ -19,46 +19,59 @@ module.exports = {
             if (blogs.length === 0) {
                 console.log('No microblogs found, seeding...');
 
-                /* First blog and 2 entries for it */
+                /* First blog and 3 entries for it */
                 var newBlog = new models.Microblog({
                     name: "First Blog"
                 });
                 newBlog.save();
 
-                var firstEntry = new models.Entry({
+                var newEntry = new models.Entry({
                     text: "First blog, first entry",
                     image: "https://octodex.github.com/images/spidertocat.png",
                     microblog: newBlog
                 });
-                firstEntry.save();
+                newEntry.save();
 
-                // TODO: probably dumb to make 2 vars for 4 dummy entries
-                var secondEntry = new models.Entry({
+                newEntry = new models.Entry({
                     text: "First blog, second entry",
                     image: "https://octodex.github.com/images/stormtroopocat.png",
                     microblog: newBlog
                 });
-                secondEntry.save();
+                newEntry.save();
 
-                /* Second blog and 2 entries for it */
+                newEntry = new models.Entry({
+                    text: "First blog, third entry",
+                    image: "https://octodex.github.com/images/heisencat.png",
+                    microblog: newBlog
+                });
+                newEntry.save();
+
+                /* Second blog and 3 entries for it */
                 newBlog = new models.Microblog({
                     name: "Second Blog"
                 });
                 newBlog.save();
 
-                firstEntry = new models.Entry({
+                newEntry = new models.Entry({
                     text: "Second blog, first entry",
                     image: "https://octodex.github.com/images/stormtroopocat.png",
                     microblog: newBlog
                 });
-                firstEntry.save();
+                newEntry.save();
 
-                secondEntry = new models.Entry({
+                newEntry = new models.Entry({
                     text: "Second blog, second entry",
                     image: "https://octodex.github.com/images/spidertocat.png",
                     microblog: newBlog
                 });
-                secondEntry.save();
+                newEntry.save();
+
+                newEntry = new models.Entry({
+                    text: "Second blog, third entry",
+                    image: "https://octodex.github.com/images/heisencat.png",
+                    microblog: newBlog
+                });
+                newEntry.save();
 
                 console.log('Done seeding!');
 
