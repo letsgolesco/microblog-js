@@ -1,36 +1,36 @@
 'use strict';
 
 define([
-  'backbone',
-  'jquery',
-  'handlebars',
-  'events'
-], function(Backbone, $, Handlebars, Events) {
+    'backbone',
+    'jquery',
+    'handlebars',
+    'events'
+], function (Backbone, $, Handlebars, Events) {
 
-  var EntryListItemView = Backbone.View.extend({
+    var EntryListItemView = Backbone.View.extend({
 
-    events: {
-      'click .delete': 'deleteEntry'
-    },
+        events: {
+            'click .delete': 'deleteEntry'
+        },
 
-    tagName: 'li',
+        tagName: 'li',
 
-    className: 'entry-item',
+        className: 'entry-item',
 
-    render: function() {
-      var template = $('#entryListItemTemplate').html();
-      var compiled = Handlebars.compile(template);
-      var html = compiled(this.model.attributes);
-      this.$el.html(html);
-      return this;
-    },
+        render: function () {
+            var template = $('#entryListItemTemplate').html();
+            var compiled = Handlebars.compile(template);
+            var html = compiled(this.model.attributes);
+            this.$el.html(html);
+            return this;
+        },
 
-    deleteEntry: function(e) {
-      e.preventDefault();
-      this.model.destroy();
-    }
-  });
+        deleteEntry: function (e) {
+            e.preventDefault();
+            this.model.destroy();
+        }
+    });
 
-  return EntryListItemView;
+    return EntryListItemView;
 
 });

@@ -1,30 +1,33 @@
 'use strict';
 
 define([
-  'backbone',
-  'views/entryListItemView'
-], function(Backbone, EntryListItemView) {
+    'backbone',
+    'views/entryListItemView'
+], function (Backbone, EntryListItemView) {
 
-  var EntryCollectionView = Backbone.View.extend({
+    var EntryCollectionView = Backbone.View.extend({
 
-    initialize: function() {
-      this.listenTo(this.collection, 'reset', this.render);
-    },
+        initialize: function () {
+            this.listenTo(this.collection, 'reset', this.render);
+            this.listenTo(this.collection, 'change', this.render);
+            this.listenTo(this.collection, 'sync', this.render);
+            this.listenTo(this.collection, 'destroy', this.render);
+        },
 
-    tagName: 'ul',
+        tagName: 'ul',
 
-    className: 'entries',
+        className: 'entries',
 
-    render: function() {
-      this.$el.html('');
-      this.collection.each(function(entry) {
-        var entryListItemView = new EntryListItemView({ model: entry });
-        this.$el.append(entryListItemView.render().el);
-      }, this);
-      return this;
-    }
-  });
+        render: function () {
+            this.$el.html('');
+            this.collection.each(function (entry) {
+                var entryListItemView = new EntryListItemView({ model: entry });
+                this.$el.append(entryListItemView.render().el);
+            }, this);
+            return this;
+        }
+    });
 
-  return EntryCollectionView;
+    return EntryCollectionView;
 
 });
