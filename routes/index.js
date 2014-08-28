@@ -38,7 +38,7 @@ router.get('/blogs/:id', function (req, res) {
     });
 });
 
-/* Get all entries for a specific microblog */
+/* GET all entries for a specific microblog */
 router.get('/blogs/:id/entries', function (req, res) {
     db.Entry.find({ microblog: req.params.id }, function (err, entries) {
         if (err) {
@@ -49,7 +49,7 @@ router.get('/blogs/:id/entries', function (req, res) {
     });
 });
 
-/* Get all entries ever */
+/* GET all entries ever */
 router.get('/entries', function (req, res) {
     db.Entry.find({}, function (err, entries) {
         if (err) {
