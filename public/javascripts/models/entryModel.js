@@ -5,8 +5,8 @@ define([
 ], function (Backbone) {
     var EntryModel = Backbone.Model.extend({
         //microblog_id: 'microblog_id',
-        image: 'image',
-        text: 'text',
+//        image: 'image',
+//        text: 'text',
         idAttribute: '_id'
     });
 
