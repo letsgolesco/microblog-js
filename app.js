@@ -9,11 +9,11 @@ var bodyParser = require('body-parser');
 
 /* MongoDB initialization */
 var mongoose = require('mongoose');
-var seeder = require('./seeder');
+//var seeder = require('./seeder');
 var db = mongoose.connect('mongodb://localhost/onboarding');
-db.connection.on('open', function () {
-    seeder.check();
-});
+//db.connection.on('open', function () {
+//    seeder.check();
+//});
 
 var routes = require('./routes/index');
 
@@ -25,7 +25,7 @@ app.set('view engine', 'jade');
 
 app.use(favicon());
 app.use(logger('dev'));
-app.use(bodyParser.json());
+app.use(bodyParser.json({ limit: '16mb' }));
 app.use(bodyParser.urlencoded());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));

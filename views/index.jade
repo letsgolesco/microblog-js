@@ -13,9 +13,11 @@ block content
 
     script(id="blogDetailTemplate", type="text/x-handlebars")
         <h2 class ="title">{{name}}</h2>
+        <form enctype="multipart/form-data">
         <textarea class="entry-text" placeholder="Compose a new entry..."></textarea>
-        <input class="entry-image" placeholder="Image URL (optional)"></input>
+        <input type="file" class="entry-image">
         <button class="post-entry">Submit</button>
+        </form>
 
     script(id="entryListItemTemplate", type="text/x-handlebars")
         <img src={{image}} alt="image">

@@ -20,7 +20,7 @@ var EntrySchema = new mongoose.Schema({
     },
 
     image: {
-        type: String,
+        type: Buffer,
         required: false
     },
 
